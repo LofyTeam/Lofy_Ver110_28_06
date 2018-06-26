@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".controller.EnterName">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/android_7"
+        android:text="LOFY"
+        android:textColor="#3f71bc"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/custom_view_shadow"
+            android:gravity="center"
+            android:text="Username"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/enterName_edt_username"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="2.5"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:gravity="center"
+            android:hint="..." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/custom_view_shadow"
+            android:gravity="center"
+            android:text="Phone Number"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/enterName_edt_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="2.5"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:gravity="center"
+            android:hint="..."
+            android:inputType="number"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/custom_view_shadow"
+            android:gravity="center"
+            android:text="Marker Color"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/enterName_btn_color_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:text="Color"
+            android:layout_marginLeft="5dp"
+            android:textColor="#3f71bc"
+            android:textStyle="bold"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            />
+        <TextView
+            android:id="@+id/enterName_tv_color_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#3f71bc"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/enterName_btn_getStart"
+        style="@style/GetStart.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Get Start"
+        android:textColor="#F9FCFF"
+        android:textStyle="bold"
+        />
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="lofy.fpt.edu.vn.lofy_ver110.controller.CreateGroup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="Code"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <com.goodiebag.pinview.Pinview
+            android:id="@+id/createGroup_ci_code"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            app:cursorVisible="false"
+            app:forceKeyboard="false"
+            android:focusable="false"
+            app:hint="0"
+            app:inputType="text"
+            app:password="false"
+            app:pinHeight="30dp"
+            app:pinLength="6"
+            app:pinWidth="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/custom_view_shadow"
+            android:gravity="center"
+            android:text="Group Name"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/createGroup_edt_group_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="2.5"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:gravity="center"
+            android:hint="..." />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/createGroup_btn_create_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:text="Create"
+        android:textStyle="bold" />
+
+</LinearLayout>

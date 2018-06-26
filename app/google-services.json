@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "297650161454",
+    "firebase_url": "https://lofyversion106.firebaseio.com",
+    "project_id": "lofyversion106",
+    "storage_bucket": "lofyversion106.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297650161454:android:323e3685218050ab",
+        "android_client_info": {
+          "package_name": "lofy.fpt.edu.vn.lofy_version106"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297650161454-2o6mcr0ja9jcsbddpjggs3cknmmffrud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lofy.fpt.edu.vn.lofy_version106",
+            "certificate_hash": "dc70a38aebe2efef2b6939b737422fd4d36c7bdc"
+          }
+        },
+        {
+          "client_id": "297650161454-onm5p5r1f577t5u35qtq7q9h0786148r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lofy.fpt.edu.vn.lofy_version106",
+            "certificate_hash": "aa29d15925cb151ecb02b080fbf60fa4b52c99b0"
+          }
+        },
+        {
+          "client_id": "297650161454-gceic3r8efn6ohb98u516gil16p6bq5k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lofy.fpt.edu.vn.lofy_version106",
+            "certificate_hash": "e44608d7b17d113af2956dbef0a30fabd13089e5"
+          }
+        },
+        {
+          "client_id": "297650161454-2o22et9lg14tb9p0d5g03v1vmdiobuuf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY4du_uwnBpdFDVLu4oyY9cRmG5jmGXZE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297650161454-2o22et9lg14tb9p0d5g03v1vmdiobuuf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

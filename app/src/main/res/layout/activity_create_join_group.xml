@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:context="lofy.fpt.edu.vn.lofy_ver110.controller.CreateJoinGroup">
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/android_7"
+        android:text="LOFY"
+        android:textColor="#3f71bc"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+        <Button
+            android:id="@+id/createJoin_btn_create_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Group"
+            android:layout_margin="10dp"
+            style="@style/GetStart.Button"
+            android:textColor="#F9FCFF"
+            android:textStyle="bold"
+            />
+        <Button
+            android:id="@+id/createGroup_btn_join_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join Group"
+            android:layout_margin="10dp"
+            style="@style/GetStart.Button"
+            android:textColor="#F9FCFF"
+            android:textStyle="bold"
+            />
+        <Button
+            android:id="@+id/createJoin_btn_current_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Group"
+            android:layout_margin="10dp"
+            style="@style/GetStart.Button"
+            android:textColor="#F9FCFF"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
