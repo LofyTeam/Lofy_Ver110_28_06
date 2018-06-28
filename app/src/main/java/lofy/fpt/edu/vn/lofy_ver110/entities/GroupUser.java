@@ -1,29 +1,26 @@
 package lofy.fpt.edu.vn.lofy_ver110.entities;
 
-public class GroupUser{
-private String userId;
-private String groupId;
-private String userNickName;
-private boolean isHost;
-private  boolean isVice;
-private String userColor;
-private String timeStamp;
-private double sizeRadius;
-private String userStatus;
+public class GroupUser {
+    private String groupsUsersID;
+    private String userId;
+    private String groupId;
+    private String userNickName;
+    private boolean isHost;
+    private boolean isVice;
+    private String userColor;
+    private String timeStamp;
+    private double sizeRadius;
+    private String userStatus;
 
     public GroupUser() {
     }
 
-    public GroupUser(String userId, String groupId, String userNickName, boolean isHost, boolean isVice, String userColor, String timeStamp, double sizeRadius, String userStatus) {
-        this.userId = userId;
-        this.groupId = groupId;
-        this.userNickName = userNickName;
-        this.isHost = isHost;
-        this.isVice = isVice;
-        this.userColor = userColor;
-        this.timeStamp = timeStamp;
-        this.sizeRadius = sizeRadius;
-        this.userStatus = userStatus;
+    public String getGroupsUsersID() {
+        return groupsUsersID;
+    }
+
+    public void setGroupsUsersID(String groupsUsersID) {
+        this.groupsUsersID = groupsUsersID;
     }
 
     public String getUserId() {
@@ -95,6 +92,19 @@ private String userStatus;
     }
 
     public void setUserStatus(String userStatus) {
+        this.userStatus = userStatus;
+    }
+
+    public GroupUser(String groupsUsersID, String userId, String groupId, String userNickName, boolean isHost, boolean isVice, String userColor, String timeStamp, double sizeRadius, String userStatus) {
+        this.groupsUsersID = groupsUsersID;
+        this.userId = userId;
+        this.groupId = groupId;
+        this.userNickName = userNickName;
+        this.isHost = isHost;
+        this.isVice = isVice;
+        this.userColor = userColor;
+        this.timeStamp = timeStamp;
+        this.sizeRadius = sizeRadius;
         this.userStatus = userStatus;
     }
 }

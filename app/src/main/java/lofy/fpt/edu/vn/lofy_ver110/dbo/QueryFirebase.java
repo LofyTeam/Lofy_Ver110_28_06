@@ -1,6 +1,7 @@
 package lofy.fpt.edu.vn.lofy_ver110.dbo;
 
 import android.content.Context;
+import android.provider.FontRequest;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import lofy.fpt.edu.vn.lofy_ver110.entities.Group;
+import lofy.fpt.edu.vn.lofy_ver110.entities.GroupUser;
 import lofy.fpt.edu.vn.lofy_ver110.entities.User;
 
 public class QueryFirebase {
@@ -22,9 +24,15 @@ public class QueryFirebase {
     private static final String TAG = "MY_TAG";
     private Context mContext;
     private ArrayList<String> codeList;
+    private ArrayList<User> alUser;
+    private ArrayList<GroupUser> alGroupUser;
 
-    public QueryFirebase (Context context){
+
+    public QueryFirebase(Context context) {
         this.mContext = context;
+        registerEventGroup();
+        registerEventUser();
+        registerEventGroupUser();
     }
 
     // push user to firebase
@@ -43,29 +51,101 @@ public class QueryFirebase {
         newRef.setValue(group);
     }
 
+    // push group-user to firebase
+    public void pushGroupUserToFirebase(GroupUser groupUser, String key) {
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mReference = mFirebaseDatabase.getReference("groups-users");
+        DatabaseReference newRef = mReference.child(key);
+        newRef.setValue(groupUser);
+    }
+
     //get code group
-    public ArrayList<String> getCodeFromFirebase() {
+    public void registerEventGroup() {
         codeList = new ArrayList<>();
-        final int[] ncount = {0};
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mFirebaseDatabase.getReference("groups").addValueEventListener(new ValueEventListener() {
-            ArrayList <String> mData = new ArrayList<>();
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                   for (DataSnapshot gr : dataSnapshot.getChildren()) {
-                       ncount[0]++;
-                       Group group=gr.getValue(Group.class);
-                       codeList.add(group.getGroupId());
-                       // codeList has data
+                for (DataSnapshot gr : dataSnapshot.getChildren()) {
+                    Group group = gr.getValue(Group.class);
+                    codeList.add(group.getGroupId());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void registerEventUser() {
+        alUser = new ArrayList<>();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mFirebaseDatabase.getReference("users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+               if (dataSnapshot.hasChildren()){
+                    for (DataSnapshot us : dataSnapshot.getChildren()) {
+                        User user = us.getValue(User.class);
+                        alUser.add(user);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void registerEventGroupUser() {
+        alGroupUser = new ArrayList<>();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mFirebaseDatabase.getReference("groups-users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+               if(dataSnapshot.hasChildren()){
+                   for (DataSnapshot us : dataSnapshot.getChildren()) {
+                       GroupUser groupUser = us.getValue(GroupUser.class);
+                       alGroupUser.add(groupUser);
                    }
-                   mData = codeList;
+               }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        Log.d(TAG, "ReturnCodelist: "+codeList.size());
-        // codeList hasn't data
+    }
+
+    // return codeList
+    public ArrayList<String> getCodeFromFirebase() {
         return codeList;
     }
+
+    // get user search  by userid
+    public User getUserByUserID(final String userID) {
+        User u = new User();
+        for (int i = 0; i < alUser.size(); i++) {
+            if (alUser.get(i).getUserId().equals(userID)) {
+                u = alUser.get(i);
+            }
+        }
+        return u;
+    }
+
+    // get user order by group id
+    public ArrayList<User> getUserOrderByGroupID(String groupID) {
+        ArrayList<User> alUs = new ArrayList<>();
+            for(int i=0;i<alGroupUser.size();i++){
+                if(alGroupUser.get(i).getGroupId().equals(groupID)){
+                    User u = getUserByUserID(alGroupUser.get(i).getUserId());
+                    alUser.add(u);
+                }
+            }
+        return alUser;
+    }
+
+
+
 }

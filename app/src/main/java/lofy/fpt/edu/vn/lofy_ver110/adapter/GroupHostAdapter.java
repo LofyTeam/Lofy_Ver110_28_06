@@ -12,14 +12,13 @@ import java.util.ArrayList;
 import java.util.zip.Inflater;
 
 import lofy.fpt.edu.vn.lofy_ver110.R;
-import lofy.fpt.edu.vn.lofy_ver110.controller.JoinGroup;
 import lofy.fpt.edu.vn.lofy_ver110.entities.User;
 
-public class JoinHostAdapter extends BaseAdapter {
+public class GroupHostAdapter extends BaseAdapter {
     ArrayList<User> alUsers;
     private LayoutInflater inflater;
 
-    public JoinHostAdapter(Context context, ArrayList<User> alUsers) {
+    public GroupHostAdapter(Context context, ArrayList<User> alUsers) {
         this.alUsers = alUsers;
         inflater = LayoutInflater.from(context);
     }
